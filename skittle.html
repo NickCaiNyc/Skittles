@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>"SKittle-Skittle"</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-colums: 1fr 2fr;
+            grid-template-rows: 1fr 2fr 1fr;
+            height: 100vh;
+        }
+        #top{
+            grid-column: span 2;
+            background-color:pink;
+            text-align:center;
+            font-size:50px;
+
+        }
+        #left{
+
+            background-image: url("https://upload.wikimedia.org/wikipedia/commons/c/ca/Skittles-Louisiana-2003.jpg");
+            background-size: cover;
+
+
+        }
+        #main_top{
+
+            background-color:green;
+            background-size: cover;
+            text-align:center;
+        }
+        #main_bottom{
+            grid-column: span 2;
+            background-color:grey;
+        }
+
+    </style>
+
+    <body>
+        <div id="container">
+        <div id="top">Brought to you by Hersey
+        </div>
+        <div id="left">
+
+        </div>
+        <div id="main_top">
+                <h1>HOW MANY SKITTLES ARE IN THIS JAR.?</h1>
+                <button id="generate">Guess</button>
+                <input id="userInput" type="text">
+        </div>
+        <div id="main_bottom"></div>
+        </div>
+        <script>
+        let n = Math.floor(Math.random() * 1000);
+        console.log(n);
+
+        let generateButton = document.querySelector('#generate');
+        let guess = document.querySelector('#userInput');
+
+        generateButton.addEventListener('click', e => {
+            if(guess.value > n)
+            {
+                alert('Your guess is too high');
+            }
+            else if(guess.value < n)
+            {
+                alert('Your guess is too low');
+            }
+            else
+            {
+                alert('Congrates dude');
+            }
+        });
+        </script>
+
+    </body>
+    </head>
+</html>
